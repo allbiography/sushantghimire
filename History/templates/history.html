@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+
+<div class="card text-bg-light mb-3" style="width: 8cm; height: 5cm;">
+    <div class="card-header">Book Taken</div>
+    <div class="card-body">
+
+
+        {% if user.is_authenticated %}
+            Name of user: {{ user }} <br>
+            Name Of Book : {{ user.personal_info.first_ordered_book }}<br>
+            Name Of Book : {{ user.book_order.name_of_books }}<br>
+
+        {% else %}
+            <p>Login to view details</p>
+        {% endif %}
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+<h1>Profile Page</h1>
+<h3>welcome {{ user }}</h3><br>
+
+
+
